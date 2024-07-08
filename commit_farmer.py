@@ -39,19 +39,18 @@ def main ():
         if i % 10 == 0:
             with open("file.txt", "w") as f:
                 f.write("")
+            os.system("git push")
         
         else:
             # modifico il file file.txt aggiungendo un carattere
             with open("file.txt", "a") as f:
                 f.write("a")
                 
-        # faccio il commit
+        # faccio il commit senza mostrare l'output del terminale
         os.system("git add file.txt")
         os.system(f'git commit -m "{commitMsg}"')
-        os.system("git push")
         
-        print(f"Commit {i+1}/{numberOf_commits} effettuato con successo!")
-        
+    os.system("git push")
     print(f"{numberOf_commits} commit effettuati con successo!")
 
 
