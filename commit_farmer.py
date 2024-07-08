@@ -6,12 +6,19 @@ def main ():
     while True:
         
         # chiedo quanti commit vuole fare
-        numberOf_commits = int(input("Quanti commit vuoi fare? (CANCELOP per annullare): "))
+        try:
+            numberOf_commits = int(input("Quanti commit vuoi fare? (CANCELOP per annullare): "))
+        except:
+            print("Inserisci un numero valido")
+            continue
         
         if numberOf_commits == "CANCELOP":
             exit()
         elif numberOf_commits <= 0:
             print("Inserisci un numero maggiore di 0")
+            continue
+        elif numberOf_commits > 1000:
+            print("Non puoi fare più di 1000 commit alla volta")
             continue
         else:
             break
@@ -51,6 +58,7 @@ def main ():
         os.system(f'git commit -m "{commitMsg}"')
         
     os.system("git push")
+    os.system("cls")
     print(f"{numberOf_commits} commit effettuati con successo!")
 
 
