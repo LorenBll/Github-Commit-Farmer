@@ -48,6 +48,9 @@ def main ():
                 f.write("")
             os.system("git push")
         
+        if i % 20 == 0:
+            print(f"{i} commit effettuati")
+        
         else:
             # modifico il file file.txt aggiungendo un carattere
             with open("file.txt", "a") as f:
@@ -69,6 +72,7 @@ def main ():
         main()
         exit()
     else:
+        os.system("cls")
         exit()
 
 
