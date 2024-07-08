@@ -40,7 +40,7 @@ def main ():
     #. creazione dei commit
     import os
     
-    for i in range(numberOf_commits):
+    for i in range(1, numberOf_commits + 1, 1):
         
         # quando arrivo al 10° commit, pulisco il file
         if i % 10 == 0:
@@ -60,6 +60,16 @@ def main ():
     os.system("git push")
     os.system("cls")
     print(f"{numberOf_commits} commit effettuati con successo!")
+    
+    #. chiedo se vuole fare altri commit
+    ok = input("Vuoi fare altri commit? (S/N): ")
+    ok.lower()
+    if ok == "s":
+        os.system("cls")
+        main()
+        exit()
+    else:
+        exit()
 
 
 if __name__ == '__main__':
